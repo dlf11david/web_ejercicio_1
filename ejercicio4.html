@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Canvas</title>
+
+	<script type="text/javascript">
+		window.onload = function() 
+		{
+			var canvas = document.getElementById("myCanvas");
+			if (!canvas || !canvas.getContext) {
+				return;
+  			}
+
+  			var context = canvas.getContext("2d");
+  			if (!context) {
+    			return;
+  			}
+
+			context.fillStyle = "#0000ff";
+            context.strokeStyle = "#ff0000";
+            context.lineWidth = 4;
+
+			context.fillRect(0,0,150,50);
+            context.strokeRect(0,60,150,50);
+
+			context.beginPath();
+			context.moveTo(160,0);
+			context.lineTo(270,0);
+            context.lineTo(60,110);
+            context.lineTo(160,0);
+
+			context.fill();
+            context.closePath();
+		}
+	</script>
+	</head>
+	<body>
+
+	<canvas id="myCanvas" width="360" height="240">
+		<p>Tu navegador no soporta canvas</p>
+	</canvas>
+
+	</body>
+</html>
